@@ -14,13 +14,13 @@ public class Employer {
     }
 
     public Employer(String value) {
-        this();
+        this(); //This calling calling the empty constructor, to set the ID field of Employer obj. being created (by this contructor)
         this.value = value;
     }
 
     // Custom toString, equals, and hashCode methods:
 
-    @Override
+    @Override //overriding inital toString
     public String toString() {
         return value;
     }
