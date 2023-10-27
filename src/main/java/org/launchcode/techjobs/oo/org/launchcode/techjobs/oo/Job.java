@@ -1,10 +1,4 @@
 package org.launchcode.techjobs.oo;
-import org.launchcode.techjobs.oo.Employer;
-import org.launchcode.techjobs.oo.Location;
-import org.launchcode.techjobs.oo.PositionType;
-import org.launchcode.techjobs.oo.CoreCompetency;
-
-
 
 import java.util.Objects;
 

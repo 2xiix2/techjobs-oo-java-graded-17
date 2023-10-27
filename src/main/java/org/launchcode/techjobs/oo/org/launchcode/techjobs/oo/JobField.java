@@ -1,6 +1,8 @@
+package org.launchcode.techjobs.oo;
+
 import java.util.Objects;
 
-public class JobField {
+public abstract class JobField {
         private int id;
         private static int nextId = 1;
         private String value;
@@ -11,31 +13,30 @@ public class JobField {
         }
 
         public JobField(String value) {
-            this(); //This calling calling the empty constructor, to set the ID field of Employer obj. being created (by this contructor)
+            this(); //This line of code is calling the empty constructor, to set the ID field of Employer obj. being created (by this constructor)
             this.value = value;
         }
 
         // Custom toString, equals, and hashCode methods:
 
-        @Override //overriding inital toString
+        @Override //overriding initial toString
         public String toString() {
             return value;
         }
 
         @Override
-        public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+        public boolean equals(Object o) {
             if (this == o) return true;
-            if (!(o instanceof org.launchcode.techjobs.oo.Employer)) return false;
-            org.launchcode.techjobs.oo.Employer employer = (org.launchcode.techjobs.oo.Employer) o;
-            return getId() == employer.getId();
+            if (!(o instanceof JobField jobField)) return false;
+            return id == jobField.id;
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(getId());
+            return Objects.hash(id);
         }
 
-        // Getters and Setters:
+    // Getters and Setters:
 
         public int getId() {
             return id;
