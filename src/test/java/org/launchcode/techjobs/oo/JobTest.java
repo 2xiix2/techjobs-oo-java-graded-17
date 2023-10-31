@@ -15,18 +15,18 @@ public class JobTest {
 
 //    @Test
 //    public void testJobConstructionSetsAllFields() {
-//        Job test_job_fields = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Perstistence"));
+//        Job test_job_fields = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //    }
 
 
         @Test
         public void testJobConstructionSetsAllFields() {
-            Job test_job_fields = new Job("Product tester", "ACME", "Desert", "Quality control", "Persistence");
-            assertEquals("Product tester", true);
-            assertEquals("ACME", true);
-            assertEquals("Persistence", true);
-            assertEquals("Quality control", true);
-            assertEquals("Desert", true);
+            Job test_job_fields = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            assertEquals("Product tester", test_job_fields.getName());
+            assertEquals("ACME", test_job_fields.getEmployer().getValue());
+            assertEquals("Desert", test_job_fields.getLocation().getValue());
+            assertEquals("Quality control", test_job_fields.getPositionType().getValue());
+            assertEquals("Persistence", test_job_fields.getCoreCompetency().getValue());
 
             assertTrue("Product tester", true);
             assertTrue("ACME", true);
